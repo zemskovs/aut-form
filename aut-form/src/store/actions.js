@@ -1,7 +1,7 @@
 import {
     SUCCESSFUL_LOGIN,
     UNSUCCESSFUL_LOGIN,
-} from './types'
+} from './consts'
 
 export const credentialChecker = (username, password) => {
     if (username === "Admin" && password === "Password1") {
