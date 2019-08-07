@@ -3,7 +3,7 @@ import {
     UNSUCCESSFUL_LOGIN,
     LOG_OUT,
     STORE_INFO
-} from './types'
+} from './consts'
 
 const initialState = {
     authenticated: false,
