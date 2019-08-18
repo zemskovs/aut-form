@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from 'react-redux';
 import "antd/dist/antd.css";
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 
-export class LoginForm extends React.Component {
+class LoginForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,13 +13,15 @@ export class LoginForm extends React.Component {
 			isLoading: false
 		}
 	}
+
 	handleSubmit = e => {
 		e.preventDefault();
-		this.props.form.validateFields((err, values) => {
-			if (!err) {
-				console.log("Received values of form: ", values);
-			}
-		});
+		this.props.logIn();
+		// this.props.form.validateFields((err, values) => {
+		// 	if (!err) {
+		// 		console.log("Received values of form: ", values);
+		// 	}
+		// });
 	};
 
 	render() {
@@ -65,3 +68,11 @@ export class LoginForm extends React.Component {
 		);
 	}
 }
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		logIn: () => dispatch({ type: 'SUCCESSFUL_LOGIN' })
+	}
+}
+
+export default connect(null, mapDispatchToProps)(LoginForm)

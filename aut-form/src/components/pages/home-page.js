@@ -1,11 +1,39 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-const HomePage = (props) => {
-  return (
-    <div>
-      Home page
-    </div>
-  )
+import Categories from './categories';
+import Settings from './settings';
+import MainPage from './main-page';
+import MenuBar from '../menu-bar/menu-bar'
+
+class HomePage extends React.Component {
+  componentDidMount() {
+
+  }
+
+  render() {
+    if (this.props.authenticated)
+      return (
+        <div className='home'>
+          <h1>Home page</h1>
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route path="/categories" component={Categories} />
+            <Route path="/settings" component={Settings} />
+          </Switch>
+          <MenuBar />
+        </div>
+      );
+
+    return <Redirect to="/login" />
+  }
 }
 
-export default HomePage;
+const mapStateToProps = (state) => {
+  return {
+    authenticated: state.authenticated
+  }
+}
+
+export default connect(mapStateToProps)(HomePage);

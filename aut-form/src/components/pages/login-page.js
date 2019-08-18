@@ -1,7 +1,13 @@
 import React from 'react';
-import { LoginForm } from "../LoginForm/loginForm"
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import LoginForm from '../LoginForm/loginForm';
 
 const LoginPage = (props) => {
+  if (props.authenticated)
+			return <Redirect to="/" />
+
   return (
     <div>
       <h1>ВОВА, РАБОТАЙ!!!!</h1>
@@ -10,4 +16,10 @@ const LoginPage = (props) => {
   )
 }
 
-export default LoginPage;
+const mapStateToProps = (state) => {
+  return {
+    authenticated: state.authenticated
+  }
+}
+
+export default connect(mapStateToProps)(LoginPage);
