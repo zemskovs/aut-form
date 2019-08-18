@@ -1,11 +1,17 @@
 import React from 'react';
 
-const HomePage = (props) => {
-  return (
-    <div>
-      Home page
-    </div>
-  )
+class HomePage extends React.Component {
+  componentDidMount() {
+    
+  }
+  
+  render() {
+    return (
+      <div>
+        Home page
+      </div>
+    )
+  }
 }
 
 export default HomePage;

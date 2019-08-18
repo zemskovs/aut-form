@@ -15,7 +15,7 @@ ReactDOM.render(
   <Provider store={createStore(reducer)}>
     <Router>
       <ServiceContext.Provider value={categoriesService}>
-        <App login={false}/>
+        <App />
       </ServiceContext.Provider>
     </Router>
   </Provider>,
