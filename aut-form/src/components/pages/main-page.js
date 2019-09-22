@@ -1,9 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-const MainPage = () => {
+import TopBar from '../top-bar/top-bar';
+import authenticated from '../../hocs/authenticated';
+
+import './main-page.css';
+
+const MainPage = (props) => {
   return (
-    <h1>Main page</h1>
+    <div className="main-page">
+      <TopBar title="главная" />
+      <div className="main-page-content">
+        <h1>Main page</h1>
+      </div>
+    </div>
   )
 }
 
-export default MainPage;
+const mapStateToProps = (state) => {
+  return {
+    authenticated: state.authenticated
+  }
+}
+
+export default connect(mapStateToProps)(authenticated(MainPage));

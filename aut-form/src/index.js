@@ -7,9 +7,9 @@ import { createStore } from 'redux';
 
 import App from './components/app/app';
 import CategoriesService from './service/categories-service';
+import { ServiceContext } from './context';
 
 const categoriesService = new CategoriesService();
-const ServiceContext = React.createContext();
 
 ReactDOM.render(
   <Provider store={createStore(reducer)}>

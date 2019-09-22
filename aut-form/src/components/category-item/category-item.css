@@ -1,0 +1,12 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 5px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.category:last-child {
+  border-bottom: none;
+}

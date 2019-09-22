@@ -24,12 +24,7 @@ export default class CategoriesService {
 
   getCategories = () => {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Math.random() < 0.75)
-          resolve(this.data)
-        else
-          reject(new Error('something gone wrong'))
-      }, 500)
+      setTimeout(() => resolve(this.data.categories), 500)
     })
   }
 }

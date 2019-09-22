@@ -2,12 +2,16 @@ import {
     SUCCESSFUL_LOGIN,
     UNSUCCESSFUL_LOGIN,
     LOG_OUT,
-    STORE_INFO
+    STORE_INFO,
+    CATEGORIES_LOADED,
+    CATEGORIES_LOADED_ERROR,
 } from './consts'
 
 const initialState = {
-    authenticated: false,
+    authenticated: true,
     loginError: false,
+    categoriesLoaded: false,
+    categories: [],
     info: []
 }
 
@@ -34,6 +38,17 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ifno: action.payload
+            }
+        case CATEGORIES_LOADED:
+            return {
+                ...state,
+                categories: action.payload,
+                categoriesLoaded: true,
+            }
+        case CATEGORIES_LOADED_ERROR:
+            return {
+                ...state,
+                categoriesLoaded: false,
             }
         default:
             return state
