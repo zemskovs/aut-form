@@ -6,6 +6,7 @@ import { ServiceContext } from '../../context';
 import ItemsList from '../items-list/items-list';
 import CategoryItem from '../category-item/category-item';
 import TopBar from '../top-bar/top-bar';
+import AddButton from '../add-button/add-button';
 import authenticated from '../../hocs/authenticated';
 
 class Categories extends React.Component {  
@@ -20,9 +21,11 @@ class Categories extends React.Component {
   }
 
   render() {
+    const addButton = <AddButton />;
+    
     return (
       <div className="categories">
-        <TopBar title="категории" />
+        <TopBar title="категории" backButton={true} funcComponent={() => addButton}/>
         <div className="categories-content">
           <ItemsList>
             {

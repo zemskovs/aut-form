@@ -41,7 +41,7 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div className="navigation">
-        <Row type="flex" justify="space-around">
+        <Row type="flex" justify="space-between">
           {navItems.map((item) => this.renderMenuItem(item))}
         </Row>
       </div>
