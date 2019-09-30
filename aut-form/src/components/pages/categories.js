@@ -9,6 +9,8 @@ import TopBar from '../top-bar/top-bar';
 import AddButton from '../add-button/add-button';
 import authenticated from '../../hocs/authenticated';
 
+import './categories.scss';
+
 class Categories extends React.Component {  
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class Categories extends React.Component {
   }
 
   render() {
-    const addButton = <AddButton />;
+    const addButton = <AddButton color="#1890ff" />;
     
     return (
       <div className="categories">

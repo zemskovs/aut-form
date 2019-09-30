@@ -1,9 +1,9 @@
 .category {
   display: flex;
-  width: 100vw;
   box-sizing: border-box;
   padding: 5px;
   margin-top: 5px;
+  border-bottom: 1px solid #c7c7c7;
 
   .info-block {
     display: flex;
@@ -17,11 +17,13 @@
   }
 
   .title {
+    color: black;
     font-size: 18px;
     font-weight: 500;
   }
 
   .spent {
     font-size: 15px;
+    color: black;
   }
 }
