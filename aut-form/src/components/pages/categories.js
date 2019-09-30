@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import * as actions from '../../store/consts';
 import { ServiceContext } from '../../context';
@@ -23,11 +24,11 @@ class Categories extends React.Component {
   }
 
   render() {
-    const addButton = <AddButton color="#1890ff" />;
+    const addButton = <AddButton addPagePath="/categories/add" color="#1890ff" />;
     
     return (
       <div className="categories">
-        <TopBar title="категории" backButton={true} funcComponent={() => addButton}/>
+        <TopBar title="категории" funcComponent={() => addButton}/>
         <div className="categories-content">
           <ItemsList>
             {

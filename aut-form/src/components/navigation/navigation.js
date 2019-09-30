@@ -8,17 +8,20 @@ const navItems = [
   {
     navItem: 'home',
     iconType: 'home',
-    link: '/'
+    link: '/',
+    exact: true,
   },
   {
     navItem: 'categories',
     iconType: 'dollar',
-    link: '/categories'
+    link: '/categories',
+    exact: false,
   },
   {
     navItem: 'settings',
     iconType: 'setting',
-    link: '/settings'
+    link: '/settings',
+    exact: false,
   }
 ]
 
@@ -31,7 +34,7 @@ export default class Navigation extends React.Component {
   renderNavItem(item) {
     return (
       <Col key={item.navItem}>
-        <NavLink exact to={item.link} className="link" activeClassName='active-link'>
+        <NavLink exact={item.exact} to={item.link} className="link" activeClassName='active-link'>
           <Icon className="icon" type={item.iconType} />
         </NavLink>
       </Col>

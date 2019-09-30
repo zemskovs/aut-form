@@ -20,7 +20,7 @@ const CategoryItem = (props) => {
         <Progress percent={spentInPercent} showInfo={false} strokeColor={progressColor} />
       </div>
       <div className="add">
-        <AddButton color="black" />  
+        <AddButton color="black" addPagePath="/" />  
       </div>
     </div>
   )

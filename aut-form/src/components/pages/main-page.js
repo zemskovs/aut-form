@@ -13,7 +13,6 @@ const MainPage = (props) => {
       <TopBar title="главная" />
       <div className="main-page-content">
         <h1>Main page</h1>
-        <AddButton title="добавить покупку" onAdd={() => {}} />
       </div>
     </div>
   )
