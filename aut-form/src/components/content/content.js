@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './content.css'
+import './content.scss'
 
 const Content = (props) => {
   return (

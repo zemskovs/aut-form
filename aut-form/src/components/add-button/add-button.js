@@ -1,11 +1,11 @@
 import React from 'react';
 import { Icon } from 'antd';
 
-import './add-button.css';
+import './add-button.scss';
 
 const AddButton = (props) => {
   return (
-    <div className="add-button" onClick={() => props.addAction()}>
+    <div className="add-button" onClick={() => props.onAdd()}>
       {
         props.title
         ? <div className="titled-button"><span>{props.title}</span></div>

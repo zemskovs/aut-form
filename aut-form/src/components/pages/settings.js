@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import TopBar from '../top-bar/top-bar';
 import authenticated from '../../hocs/authenticated';
 
-import './settings.css';
+import './settings.scss';
 
 const Settings = () => {
   return (

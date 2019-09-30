@@ -8,7 +8,7 @@ import Categories from '../pages/categories';
 import MainPage from '../pages/main-page';
 import Navigation from '../navigation/navigation';
 
-import './app.css';
+import './app.scss';
 
 const App = (props) => {
   return (

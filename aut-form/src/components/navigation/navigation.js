@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Row, Col, Icon } from 'antd';
 
-import './navigation.css';
+import './navigation.scss';
 
 const navItems = [
   {
@@ -12,7 +12,7 @@ const navItems = [
   },
   {
     navItem: 'categories',
-    iconType: 'ordered-list',
+    iconType: 'dollar',
     link: '/categories'
   },
   {

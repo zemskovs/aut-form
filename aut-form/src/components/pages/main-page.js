@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 import TopBar from '../top-bar/top-bar';
 import AddButton from '../add-button/add-button';
 import authenticated from '../../hocs/authenticated';
 
-import './main-page.css';
+import './main-page.scss';
 
 const MainPage = (props) => {
   return (
@@ -14,7 +13,7 @@ const MainPage = (props) => {
       <TopBar title="главная" />
       <div className="main-page-content">
         <h1>Main page</h1>
-        <AddButton title="добавить покупку" addAction={() => {}} />
+        <AddButton title="добавить покупку" onAdd={() => {}} />
       </div>
     </div>
   )

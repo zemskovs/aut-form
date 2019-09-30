@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './items-list.css';
+import './items-list.scss';
 
 export default class ItemsList extends React.Component {
   render() {

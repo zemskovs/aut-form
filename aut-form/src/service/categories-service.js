@@ -5,7 +5,7 @@ export default class CategoriesService {
         id: 1,
         title: "Продукты",
         limit: 10500.00,
-        spent: 5000.12,
+        spent: 1000.12,
       },
       {
         id: 2,

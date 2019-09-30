@@ -1,14 +1,24 @@
 import React from 'react';
 
-import './category-item.css';
+import AddButton from '../add-button/add-button';
+import helpers from '../../helpers/helpres';
+
+import './category-item.scss';
 
 const CategoryItem = (props) => {
   const category = props.item;
+  const bgcolor = helpers.styles.categoryBgColor(props.item.spent, props.item.limit);
+  debugger
   return (
-    <div className="category">
-      <span>{category.title}</span>
-      <span>Потрачено: {category.spent}</span>
-      <span>Лимит: {category.limit}</span>
+    <div className="category" style={{ backgroundColor: bgcolor, }}>
+      <div className="info-block">
+        <span className="title">{category.title}</span>
+        <span className="spent">Потрачено: {category.spent}</span>
+        <span className="limit">Лимит: {category.limit}</span>
+      </div>
+      <div className="add">
+        <AddButton />  
+      </div>
     </div>
   )
 }
