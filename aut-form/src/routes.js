@@ -8,16 +8,28 @@ import Categories from './components/pages/categories';
 import CategoriesAddPage from './components/pages/category-add';
 import Settings from './components/pages/settings';
 
-const routes = (
-  <React.Fragment>
-    <Route exact path="/login" component={LoginPage} />
-    <App>
-      <Route exact path="/" component={MainPage} />
-      <Route exact path="/categories" component={Categories} />
-      <Route path="/categories/add" component={CategoriesAddPage} />
-      <Route exact path="/settings" component={Settings} />
-    </App>
-  </React.Fragment>
-)
+const Routes = (props) => {
+  return (
+    <React.Fragment>
+      <Route exact path="/login">
+        <LoginPage />
+      </Route>
+      <App>
+        <Route exact path="/">
+          <MainPage />
+        </Route>
+        <Route exact path="/categories">
+          <Categories />
+        </Route>
+        <Route path="/categories/add">
+          <CategoriesAddPage />
+        </Route>
+        <Route exact path="/settings">
+          <Settings />
+        </Route>
+      </App>
+    </React.Fragment>
+  )
+}
 
-export default routes;
+export default Routes;

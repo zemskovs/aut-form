@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 
 import CategoriesService from './service/categories-service';
 import { ServiceContext } from './context';
-import routes from './routes';
+import Routes from './routes';
 
 const categoriesService = new CategoriesService();
 
@@ -15,7 +15,7 @@ ReactDOM.render(
   <Provider store={createStore(reducer)}>
     <Router>
       <ServiceContext.Provider value={categoriesService}>
-        {routes}
+        <Routes/>
       </ServiceContext.Provider>
     </Router>
   </Provider>,
