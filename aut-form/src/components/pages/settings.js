@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 
 import TopBar from '../top-bar/top-bar';
-import authenticated from '../../hocs/authenticated';
 
 import './settings.scss';
 
@@ -23,4 +22,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(authenticated(Settings));
+export default connect(mapStateToProps)(Settings);

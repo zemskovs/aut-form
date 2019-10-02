@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import TopBar from '../top-bar/top-bar';
 import AddButton from '../add-button/add-button';
-import authenticated from '../../hocs/authenticated';
 
 import './main-page.scss';
 
@@ -24,4 +23,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(authenticated(MainPage));
+export default connect(mapStateToProps)(MainPage);

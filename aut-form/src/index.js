@@ -5,9 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import App from './components/app/app';
 import CategoriesService from './service/categories-service';
 import { ServiceContext } from './context';
+import routes from './routes';
 
 const categoriesService = new CategoriesService();
 
@@ -15,7 +15,7 @@ ReactDOM.render(
   <Provider store={createStore(reducer)}>
     <Router>
       <ServiceContext.Provider value={categoriesService}>
-        <App />
+        {routes}
       </ServiceContext.Provider>
     </Router>
   </Provider>,

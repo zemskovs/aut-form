@@ -8,7 +8,6 @@ import ItemsList from '../items-list/items-list';
 import CategoryItem from '../category-item/category-item';
 import TopBar from '../top-bar/top-bar';
 import AddButton from '../add-button/add-button';
-import authenticated from '../../hocs/authenticated';
 
 import './categories.scss';
 
@@ -58,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(authenticated(Categories));
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

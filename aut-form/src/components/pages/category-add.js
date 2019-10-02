@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 import TopBar from '../top-bar/top-bar';
-import authenticated from '../../hocs/authenticated';
 
 const CategoriesAddPage = (props) => {
   return (
@@ -20,4 +19,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(authenticated(CategoriesAddPage));
+export default connect(mapStateToProps)(CategoriesAddPage);
