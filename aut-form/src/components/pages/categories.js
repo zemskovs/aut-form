@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 import * as actions from '../../store/consts';
 import { ServiceContext } from '../../context';
 import ItemsList from '../items-list/items-list';
 import CategoryItem from '../category-item/category-item';
 import TopBar from '../top-bar/top-bar';
-import AddButton from '../add-button/add-button';
+import Button from '../button/button';
 
 import './categories.scss';
 
 class Categories extends React.Component {  
   constructor(props) {
     super(props);
+    this.toAddCategory = this.toAddCategory.bind(this);
   }
 
   componentDidMount() {
@@ -22,8 +23,17 @@ class Categories extends React.Component {
       .catch(() => this.props.categoriesLoadError())
   }
 
+  toAddCategory() {
+    console.log(this.props)
+    return <Redirect to="/categories/add" />
+  }
+
   render() {
-    const addButton = <AddButton addPagePath="/categories/add" color="#1890ff" />;
+    const addButton = <Button 
+      onAction={() => this.toAddCategory()} 
+      color="#1890ff"
+      iconType="plus" 
+      likeIcon={true} />;
     
     return (
       <div className="categories">

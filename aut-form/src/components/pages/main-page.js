@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import TopBar from '../top-bar/top-bar';
-import AddButton from '../add-button/add-button';
 
 import './main-page.scss';
 

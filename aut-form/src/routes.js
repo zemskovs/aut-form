@@ -11,22 +11,12 @@ import Settings from './components/pages/settings';
 const Routes = (props) => {
   return (
     <React.Fragment>
-      <Route exact path="/login">
-        <LoginPage />
-      </Route>
+      <Route exact path="/login" render={(routeProps) => <LoginPage {...routeProps}/>} />
       <App>
-        <Route exact path="/">
-          <MainPage />
-        </Route>
-        <Route exact path="/categories">
-          <Categories />
-        </Route>
-        <Route path="/categories/add">
-          <CategoriesAddPage />
-        </Route>
-        <Route exact path="/settings">
-          <Settings />
-        </Route>
+        <Route exact path="/" render={(routeProps) => <MainPage {...routeProps}/>} />
+        <Route exact path="/categories" render={(routeProps) => <Categories {...routeProps}/>} />
+        <Route path="/categories/add" render={(routeProps) => <CategoriesAddPage {...routeProps}/>} />
+        <Route exact path="/settings" render={(routeProps) => <Settings {...routeProps}/>} />
       </App>
     </React.Fragment>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Progress } from 'antd';
 
-import AddButton from '../add-button/add-button';
+import Button from '../button/button';
 import helpers from '../../helpers/helpres';
 
 import './category-item.scss';
@@ -20,7 +20,10 @@ const CategoryItem = (props) => {
         <Progress percent={spentInPercent} showInfo={false} strokeColor={progressColor} />
       </div>
       <div className="add">
-        <AddButton color="black" addPagePath="/" />  
+        <Button 
+          onAction={() => ""} 
+          likeIcon={true} 
+          iconType="plus" />  
       </div>
     </div>
   )

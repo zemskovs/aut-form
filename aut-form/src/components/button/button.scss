@@ -1,11 +1,10 @@
-.add-button {
+.button {
   display: flex;
 }
 
-.add-button .titled-button {
+.button titled-button {
   box-sizing: border-box;
   padding: 0 5px 0 5px;
   font-weight: 500;
   font-size: 18px;
-  border: 2px solid #1890ff;
 }

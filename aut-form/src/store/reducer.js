@@ -8,7 +8,7 @@ import {
 } from './consts'
 
 const initialState = {
-    authenticated: false,
+    authenticated: true,
     loginError: false,
     categoriesLoaded: false,
     categories: [],
