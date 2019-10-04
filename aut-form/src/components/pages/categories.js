@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter, Redirect } from 'react-router-dom';
 
 import * as actions from '../../store/consts';
 import { ServiceContext } from '../../context';
@@ -24,8 +23,7 @@ class Categories extends React.Component {
   }
 
   toAddCategory() {
-    console.log(this.props)
-    return <Redirect to="/categories/add" />
+    this.props.history.push("/categories/add")
   }
 
   render() {
