@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import LoginForm from '../LoginForm/loginForm';
+import {LoginForm} from '../LoginForm/loginForm';
 
 const LoginPage = (props) => {
   if (props.authenticated)

@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Categories from './categories';
-import Settings from './settings';
-import MainPage from './main-page';
-import MenuBar from '../menu-bar/menu-bar'
+// import Settings from './settings';
+// import MainPage from './main-page';
+// import MenuBar from '../menu-bar/menu-bar'
 
 class HomePage extends React.Component {
   componentDidMount() {
@@ -18,11 +17,11 @@ class HomePage extends React.Component {
         <div className='home'>
           <h1>Home page</h1>
           <Switch>
-            <Route exact path="/" component={MainPage} />
+            {/* <Route exact path="/" component={MainPage} />
             <Route path="/categories" component={Categories} />
-            <Route path="/settings" component={Settings} />
+            <Route path="/settings" component={Settings} /> */}
           </Switch>
-          <MenuBar />
+          {/* <MenuBar /> */}
         </div>
       );
 
