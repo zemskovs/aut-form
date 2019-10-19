@@ -1,0 +1,25 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  padding: 0 5px 0 5px;
+  min-height: 32px;
+
+  .back-button {
+    margin-right: 5px;
+  }
+  
+  .title {
+    flex-grow: 1;
+    font-weight: 500;
+  }
+}
+
+.functional-component {
+
+}
+
+.search-input {
+
+}
