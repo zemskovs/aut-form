@@ -5,8 +5,12 @@ export interface ICategotyItem {
   spent: number,
 }
 
+export interface IData {
+  categories: ICategotyItem[],
+}
+
 export default class CategoriesService {
-  data = {
+  data: IData = {
     categories: [
       {
         id: 1,

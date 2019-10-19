@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { connect } from 'react-redux';
 
 import { IGlobalAppState } from '../../store/reducer';
@@ -14,16 +14,16 @@ import Button from '../button/button';
 import './categories.scss';
 
 const Categories = (props: any) => {  
-
-  // componentDidMount() {
-  //   this.context.getCategories()
-  //     .then(categories => this.props.updateCategories(categories))
-  //     .catch(() => this.props.categoriesLoadError())
-  // }
-
+  const categoriesService = useContext(ServiceContext);
   const toAddCategory = () => {
     props.history.push("/categories/add")
   }
+
+  useEffect(() => {
+    categoriesService.getCategories()
+      .then((categories) => props.updateCategories(categories))
+      .catch(() => props.categoriesLoadError())
+  })
 
   const addButton = <Button 
     onAction={() => toAddCategory()} 
@@ -37,7 +37,7 @@ const Categories = (props: any) => {
       <div className="categories-content">
         <ItemsList>
           {
-            props.categories.map((category:ICategotyItem) => <CategoryItem key={category.id} item={category}/>)
+            props.categories.map((category: ICategotyItem) => <CategoryItem key={category.id} item={category}/>)
           }
         </ItemsList>
       </div>
@@ -45,7 +45,6 @@ const Categories = (props: any) => {
   )
 }
 
-Categories.contextType = ServiceContext;
 
 const mapStateToProps = (state: IGlobalAppState) => {
   return {
