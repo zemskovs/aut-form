@@ -1,8 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-const authenticated = (WrappedComponent) => {
-  return (props) => {
+const authenticated = (WrappedComponent: React.FC) => {
+  return (props: any) => {
     if (!props.authenticated) {
       return <Redirect to="/login" />
     }

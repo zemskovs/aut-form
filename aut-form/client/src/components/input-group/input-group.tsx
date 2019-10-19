@@ -1,10 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './input-group.scss';
 
-const InputGroup = (props) => {
-  const clsName = "input-group-" + (props.direction);
+export interface IInputGroupProps {
+  children: any,
+  direction?: "row"|"column",
+  groupTitle?: string
+}
+
+const InputGroup = ({direction = "row", ...props}: IInputGroupProps) => {
+  const clsName = "input-group-" + (direction);
   return (
     <div className="input-group">
       {
@@ -17,15 +22,6 @@ const InputGroup = (props) => {
       </div>
     </div>
   )
-}
-
-InputGroup.propTypes = {
-  direction: PropTypes.oneOf(['row', 'column']),
-  groupTitle: PropTypes.string
-}
-
-InputGroup.defaultProps = {
-  direction: 'row'
 }
 
 export default InputGroup;

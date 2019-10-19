@@ -5,8 +5,13 @@ import Button from '../button/button';
 import helpers from '../../helpers/helpres';
 
 import './category-item.scss';
+import { ICategotyItem } from '../../service/categories-service';
 
-const CategoryItem = (props) => {
+export interface ICategoryItemProps {
+  item: ICategotyItem
+}
+
+const CategoryItem = (props: ICategoryItemProps) => {
   const category = props.item;
   const progressColor = helpers.styles.progressColor(props.item.spent, props.item.limit);
   const spentInPercent = props.item.spent / props.item.limit * 100;

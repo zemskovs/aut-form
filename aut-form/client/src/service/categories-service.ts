@@ -1,3 +1,10 @@
+export interface ICategotyItem {
+  id: number,
+  title: string,
+  limit: number,
+  spent: number,
+}
+
 export default class CategoriesService {
   data = {
     categories: [

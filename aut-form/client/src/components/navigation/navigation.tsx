@@ -4,6 +4,13 @@ import { Row, Col, Icon } from 'antd';
 
 import './navigation.scss';
 
+export interface INavItem {
+  navItem: string,
+  iconType: string,
+  link: string,
+  exact: boolean
+}
+
 const navItems = [
   {
     navItem: 'home',
@@ -25,13 +32,9 @@ const navItems = [
   }
 ]
 
-export default class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.renderMenuItem = this.renderNavItem.bind(this);
-  }
+const Navigation = () => {
 
-  renderNavItem(item) {
+  const renderNavItem = (item: INavItem) => {
     return (
       <Col key={item.navItem}>
         <NavLink exact={item.exact} to={item.link} className="link" activeClassName='active-link'>
@@ -41,13 +44,13 @@ export default class Navigation extends React.Component {
     )
   }
 
-  render() {
-    return (
-      <div className="navigation">
-        <Row type="flex" justify="space-between">
-          {navItems.map((item) => this.renderMenuItem(item))}
-        </Row>
-      </div>
-    )
-  }
+  return (
+    <div className="navigation">
+      <Row type="flex" justify="space-between">
+        {navItems.map((item) => renderNavItem(item))}
+      </Row>
+    </div>
+  )
 }
+
+export default Navigation;

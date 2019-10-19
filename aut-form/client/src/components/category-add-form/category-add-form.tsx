@@ -7,13 +7,13 @@ import Input from '../input/input';
 
 import './category-add-form.scss';
 
-const CategoryAddForm = (props) => {
+const CategoryAddForm = (props: any) => {
   const [categoryName, setCategoryName] = useState("");
   const [rubs, setRubs] = useState("");
   const [pennies, setPennies] = useState("");
 
   return (
-    <Form>
+    <Form handleSubmit={() => {}}>
       <InputGroup direction="column">
         <Input 
           label="категория" 
@@ -31,17 +31,13 @@ const CategoryAddForm = (props) => {
           <Input 
             label="коп"
             name="pennies"
-            value={rubs}
+            value={pennies}
             onChange={(e) => setPennies(e.target.value)}
           />
         </InputGroup>
       </InputGroup>
     </Form>
   )
-}
-
-CategoryAddForm.propTypes = {
-  id: PropTypes.number.isRequired
 }
 
 export default CategoryAddForm;

@@ -1,6 +1,6 @@
 const helpers = {
   styles: {
-    progressColor: (spent, limit) => {
+    progressColor: (spent: number, limit: number) => {
       const spentInPercent = spent / limit * 100;
       if (spentInPercent <= 33)
         return '#51c513';

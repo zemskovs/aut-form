@@ -4,15 +4,24 @@ import { Icon } from 'antd';
 
 import './button.scss';
 
-const Button = (props) => {
+export interface IButton {
+  onAction: () => void,
+  iconType?: string,
+  title?: string,
+  color?: string,
+  withBorder?: boolean,
+  likeIcon?: boolean,
+}
+
+const Button = ({color = "black", likeIcon = false, ...props}:IButton) => {
   const styles = {
-    border: props.withBorder ? `2px solid ${props.color}` : "",
-    color: props.color
+    border: props.withBorder ? `2px solid ${color}` : "",
+    color: color
   }
   return (
       <div className="button" onClick={() => props.onAction()}>
         {
-          props.likeIcon
+          likeIcon
           ? <Icon type={props.iconType} style={{fontSize: "20px", ...styles}}/> 
           : <div 
               className="titled-button" 
@@ -23,15 +32,6 @@ const Button = (props) => {
         } 
       </div>
   )
-}
-
-Button.propTypes = {
-  iconType: PropTypes.string,
-  title: PropTypes.string,
-  color: PropTypes.string,
-  onAction: PropTypes.func.isRequired,
-  withBorder: PropTypes.bool,
-  likeIcon: PropTypes.bool,
 }
 
 Button.defaultProps = {

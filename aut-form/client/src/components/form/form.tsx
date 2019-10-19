@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 
 import './form.scss';
 
-const Form = (props) => {
+export interface IFromProps {
+  handleSubmit: () => void,
+  children: any,
+  validateFunc?: () => void,
+}
+
+const Form = (props: IFromProps) => {
   return (
-    <form onSubmit={props.handleSubmit ? () => props.handleSubmit() : null}>
+    <form onSubmit={props.handleSubmit ? () => props.handleSubmit() : () => {}}>
       {props.children}
     </form>
   )

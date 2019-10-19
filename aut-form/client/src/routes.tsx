@@ -8,7 +8,7 @@ import Categories from './components/pages/categories';
 import CategoriesAddPage from './components/pages/category-add';
 import Settings from './components/pages/settings';
 
-const Routes = (props) => {
+const Routes = (props: any) => {
   return (
     <React.Fragment>
       <Route exact path="/login" render={(routeProps) => <LoginPage {...routeProps}/>} />

@@ -7,7 +7,20 @@ import {
     CATEGORIES_LOADED_ERROR,
 } from './consts'
 
-const initialState = {
+export interface IGlobalAppState {
+    authenticated: boolean,
+    loginError: boolean,
+    categoriesLoaded: boolean,
+    categories: any[],
+    info: any[]
+}
+
+export interface IReducerAction {
+    type: string,
+    payload: any,
+}
+
+const initialState: IGlobalAppState = {
     authenticated: true,
     loginError: false,
     categoriesLoaded: false,
@@ -15,7 +28,7 @@ const initialState = {
     info: []
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: IReducerAction) => {
     switch (action.type) {
         case SUCCESSFUL_LOGIN: 
             return {

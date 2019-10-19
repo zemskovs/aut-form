@@ -2,9 +2,15 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { IGlobalAppState } from '../../store/reducer';
+
 import LoginForm from '../LoginForm/loginForm';
 
-const LoginPage = (props) => {
+export interface ILoginPageProps {
+  authenticated: boolean
+}
+
+const LoginPage = (props: ILoginPageProps) => {
   if (props.authenticated)
 			return <Redirect to="/" />
 
@@ -15,7 +21,7 @@ const LoginPage = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: IGlobalAppState) => {
   return {
     authenticated: state.authenticated
   }

@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import TopBar from '../top-bar/top-bar';
 
 import './main-page.scss';
 
-const MainPage = (props) => {
+const MainPage = (props: any) => {
   return (
     <div className="main-page">
       <TopBar title="главная" />
@@ -16,10 +15,4 @@ const MainPage = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    authenticated: state.authenticated
-  }
-}
-
-export default connect(mapStateToProps)(MainPage);
+export default MainPage

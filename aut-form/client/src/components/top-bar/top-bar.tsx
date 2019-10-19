@@ -4,7 +4,14 @@ import { Icon } from 'antd';
 
 import './top-bar.scss';
 
-const TopBar = (props) => {
+export interface ITopBarProps {
+  title: string,
+  backButton?: boolean,
+  funcComponent?: () => React.FC,
+  history?: any
+}
+
+const TopBar = (props: any) => {
   return (
     <div className="top-bar">
       {

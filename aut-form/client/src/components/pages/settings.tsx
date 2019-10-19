@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux'; 
 
 import TopBar from '../top-bar/top-bar';
 
 import './settings.scss';
 
-const Settings = () => {
+const Settings = (props: any) => {
   return (
     <div className="settings">
       <TopBar title="настройки" />
@@ -16,10 +15,4 @@ const Settings = () => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    authenticated: state.authenticated
-  }
-}
-
-export default connect(mapStateToProps)(Settings);
+export default Settings;
