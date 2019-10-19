@@ -1,4 +1,0 @@
-export const SUCCESSFUL_LOGIN = 'SUCCESSFUL_LOGIN';
-export const UNSUCCESSFUL_LOGIN = 'UNSUCCESSFUL_LOGIN';
-export const LOG_OUT = 'LOG_OUT';
-export const STORE_INFO = 'STORE_INFO';
