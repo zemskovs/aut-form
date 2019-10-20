@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 import Form from '../form/form';
 import InputGroup from '../input-group/input-group';
 import Input from '../input/input';
 
+import { ICategotyItem } from '../../service/categories-service';
+
 import './category-add-form.scss';
 
-const CategoryAddForm = (props: any) => {
+export interface ICategoryAddFormProps {
+  id: number,
+  onChange: (id: number, data: ICategotyItem) => void;
+}
+
+const CategoryAddForm = (props: ICategoryAddFormProps) => {
   const [categoryName, setCategoryName] = useState("");
   const [rubs, setRubs] = useState("");
-  const [pennies, setPennies] = useState("");
+
+  useEffect(() => {
+    props.onChange(props.id, {
+      id: props.id,
+      title: categoryName,
+      limit: Number(rubs)
+    })
+  })
 
   return (
     <Form handleSubmit={() => {}}>
@@ -27,12 +40,6 @@ const CategoryAddForm = (props: any) => {
             name="rubs"
             value={rubs}
             onChange={(e) => setRubs(e.target.value)}
-          />
-          <Input 
-            label="коп"
-            name="pennies"
-            value={pennies}
-            onChange={(e) => setPennies(e.target.value)}
           />
         </InputGroup>
       </InputGroup>

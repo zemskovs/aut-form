@@ -12,9 +12,10 @@ export interface ICategoryItemProps {
 }
 
 const CategoryItem = (props: ICategoryItemProps) => {
+  const spent = props.item.spent || 0;
   const category = props.item;
-  const progressColor = helpers.styles.progressColor(props.item.spent, props.item.limit);
-  const spentInPercent = props.item.spent / props.item.limit * 100;
+  const progressColor = helpers.styles.progressColor(spent, props.item.limit);
+  const spentInPercent = spent / props.item.limit * 100;
 
   return (
     <div className="category">

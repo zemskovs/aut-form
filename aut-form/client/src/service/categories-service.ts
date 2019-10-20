@@ -2,7 +2,7 @@ export interface ICategotyItem {
   id: number,
   title: string,
   limit: number,
-  spent: number,
+  spent?: number,
 }
 
 export interface IData {
