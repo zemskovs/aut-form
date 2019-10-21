@@ -1,9 +1,8 @@
 .user-input {
-  label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
 
   input {
     border: none;

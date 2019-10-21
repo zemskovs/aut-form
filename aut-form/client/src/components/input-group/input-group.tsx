@@ -5,13 +5,16 @@ import './input-group.scss';
 export interface IInputGroupProps {
   children: any,
   direction?: "row"|"column",
-  groupTitle?: string
+  groupTitle?: string,
+  class?: string,
 }
 
-const InputGroup = ({direction = "row", ...props}: IInputGroupProps) => {
-  const clsName = "input-group-" + (direction);
+const InputGroup: React.FC<IInputGroupProps> = (props) => {
+  props = { direction: "row", ...props};
+  let clsName = "input-group-" + (props.direction);
+
   return (
-    <div className="input-group">
+    <div className={`group ${props.class || ""}`}>
       {
         props.groupTitle
         ? <span className="input-group-title">{props.groupTitle}</span>

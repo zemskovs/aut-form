@@ -26,7 +26,7 @@ const Categories = (props: any) => {
   })
 
   const addButton = <Button 
-    onAction={() => toAddCategory()} 
+    onClick={() => toAddCategory()} 
     color="#1890ff"
     iconType="plus" 
     likeIcon={true} />;

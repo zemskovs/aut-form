@@ -17,10 +17,8 @@ const Input = ({type = "text", ...props}: IInputProps) => {
   const upperLabel = label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();
   return (
     <div className="user-input">
-    <label>
       <span className="input-label">{upperLabel}</span>
       <input {...inputProps} type={type} />
-    </label>
     </div>
   )
 }

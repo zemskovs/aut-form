@@ -27,7 +27,7 @@ const CategoryItem = (props: ICategoryItemProps) => {
       </div>
       <div className="add">
         <Button 
-          onAction={() => ""} 
+          onClick={() => ""} 
           likeIcon={true} 
           iconType="plus" />  
       </div>

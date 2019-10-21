@@ -13,7 +13,7 @@ export interface ICategoryAddFormProps {
   onChange: (id: number, data: ICategotyItem) => void;
 }
 
-const CategoryAddForm = (props: ICategoryAddFormProps) => {
+const CategoryAddForm: React.FC<ICategoryAddFormProps> = (props) => {
   const [categoryName, setCategoryName] = useState("");
   const [rubs, setRubs] = useState("");
 
@@ -26,7 +26,7 @@ const CategoryAddForm = (props: ICategoryAddFormProps) => {
   })
 
   return (
-    <Form handleSubmit={() => {}}>
+    <Form class="category-add-form" handleSubmit={() => {}}>
       <InputGroup direction="column">
         <Input 
           label="категория" 
@@ -34,7 +34,7 @@ const CategoryAddForm = (props: ICategoryAddFormProps) => {
           value={categoryName}
           onChange={(e) => setCategoryName(e.target.value)}
         />
-        <InputGroup groupTitle="Лимит по категории">
+        <InputGroup groupTitle="Лимит по категории" class="group-inner">
           <Input 
             label="руб"
             name="rubs"

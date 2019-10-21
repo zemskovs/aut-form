@@ -1,25 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './form.scss';
 
 export interface IFromProps {
   handleSubmit: () => void,
-  children: any,
   validateFunc?: () => void,
+  class?: string,
 }
 
-const Form = (props: IFromProps) => {
+const Form: React.FC<IFromProps> = (props) => {
   return (
-    <form onSubmit={props.handleSubmit ? () => props.handleSubmit() : () => {}}>
+    <form 
+      className={props.class} 
+      onSubmit={() => props.handleSubmit()}
+    >
       {props.children}
     </form>
   )
-}
-
-Form.propTypes = {
-  handleSubmit: PropTypes.func,
-  validateFunc: PropTypes.func
 }
 
 export default Form;
