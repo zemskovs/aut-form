@@ -14,7 +14,16 @@
     }
   }
 
-  .forms {
+  .add-items {
     overflow-y: scroll;
+
+    .add-item {
+      display: flex;
+      margin-top: 40px;
+    }
+
+    .add-item:first-child {
+      margin-top: 10px;
+    }
   }
 }

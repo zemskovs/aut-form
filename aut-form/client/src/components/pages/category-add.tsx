@@ -45,6 +45,20 @@ const CategoriesAddPage = (props: any) => {
     })
   }
 
+  function handleDelete(id: number) {
+    const dataItems = data.dataItems;
+    const idx = dataItems.findIndex((item) => item.id === id);
+    const newDataItems = [
+      ...dataItems.slice(0, idx),
+      ...dataItems.slice(idx + 1)
+    ]
+    setData({
+      dataCount: data.dataCount - 1,
+      lastId: data.lastId,
+      dataItems: newDataItems
+    })
+  }
+
   function handleSubmit() {
 
   }
@@ -56,7 +70,9 @@ const CategoriesAddPage = (props: any) => {
         <AddList 
           title="Добавить категории"
           handleAdd={() => handleAdd()}
+          handleDelete={(id) => handleDelete(id)}
           handleSubmit={() => handleSubmit()}
+          deleteBtnEnable={data.dataCount > 1}
         >
           {
             data.dataItems.map((item) => { 
